@@ -44,22 +44,22 @@ window.addEventListener("resize",showButton);
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/Seekers" className="nav-links" onClick={closeMobileMenu}>
+              <Link to="/student" className="nav-links" onClick={closeMobileMenu}>
                 Seekers
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/Pickers" className="nav-links" onClick={closeMobileMenu}>
+              <Link to="/hr" className="nav-links" onClick={closeMobileMenu}>
                 Pickers
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/Jobs" className="nav-links" onClick={closeMobileMenu}>
-                Jobs
+              <Link to="/recruiter" className="nav-links" onClick={closeMobileMenu}>
+              recruiter
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/Admin" className="nav-links" onClick={closeMobileMenu}>
+              <Link to="/admin" className="nav-links" onClick={closeMobileMenu}>
                 Admin
               </Link>
             </li>
