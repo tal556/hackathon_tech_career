@@ -2,14 +2,13 @@ import React from 'react';
 //Admin page
 import AdminPage from './pages/admin-page'
 //Home page
+import HomePage from './pages/HomePage/HomePage'
 import Home from './pages/HomePage/HomePage'
 //HR page
 import Student from './pages/student-page/Student'
-import SpecificStudent from './components/specificStudent/SpecificStudent'  
+import SpecificStudent from './components/specificStudent/SpecificStudent'
 import HrRegisterForm from './pages/hr-page/Hr-Register'
-
 import LinkdIn from './components/job-cards/LinkdIn'
-
 import JobCards from './pages/CompanyZone/JobCards'
 import StuSteps from './components/steps/StuSteps'
 import StudentPersonal from './pages/personal-page/StudentPersonal'
@@ -26,31 +25,31 @@ import AddJob from './pages/CompanyZone/AddJob';
 
 function AdminRouter() {
 
- 
+
 
   return (
     <Switch>
       <Route exact path="/">
-        <Home />
+        <HomePage />
       </Route>
       <Route path="/hr">
         <JobCards />
       </Route>
       <Route path="/JobEditPage">
-        <JobEditPage/>
+        <JobEditPage />
       </Route>
       <Route path="/addNewJob">
-        <AddJob/>
+        <AddJob />
       </Route>
       <Route path="/signUp/hr/:token/:id">
-       <HrRegisterForm/>
+        <HrRegisterForm />
       </Route>
       < Route path="/recruiter">
         <LinkdIn />
       </Route>
-     < Route path="/recruiter">
-            <LinkdIn/>
-          </Route>
+      < Route path="/recruiter">
+        <LinkdIn />
+      </Route>
       <Route path="/signUp/company">
       </Route>
       <Route path="/student">
@@ -60,7 +59,7 @@ function AdminRouter() {
         <SpecificStudent />
       </Route>
       <Route path="/signUp/student/:token/:id">
-       <StuSteps/>
+        <StuSteps />
       </Route>
       <Route path="/admin">
         <AdminPage />
