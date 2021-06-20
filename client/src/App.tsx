@@ -4,16 +4,15 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import Footer from "./components/footer/Footer";
+import AdminRouter from "./AdminRouter";
+
 
 function App() {
-  return (
-    <Router>
-      <NavBar />
-      <Switch>
-        <Route path="/" exact component={HomePage} />
-      </Switch>
-      <Footer />
-    </Router>
+  return (<>
+    <NavBar />
+    <AdminRouter />
+    <Footer />
+  </>
   );
 }
 

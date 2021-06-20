@@ -14,7 +14,7 @@ export default function HrRegisterForm() {
   const [hrData, setHrData] = useState({
     id,
     email: '',
-    name: '',
+    name: ' ',
     phone: '',
     password: '',
     password1: '',

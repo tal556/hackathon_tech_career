@@ -1,9 +1,10 @@
 import login from './login.utils'
-const { getToken } = login
+console.log(login)
+// const { getToken } = login
 const err = (serviceName: string, error: string) => `error on ${serviceName}: ${error}`;
 
 class Http {
-    async GET(url: string, token = getToken()) {
+    async GET(url: string, token = login.getToken()) {
         const options = {
             method: 'GET',
             headers: {
@@ -18,7 +19,7 @@ class Http {
         catch (error) { return { success: false, error: Error(err('GET', error)) } }
         finally { }
     }
-    async POST(url: string, body?: object, token = getToken()) {
+    async POST(url: string, body?: object, token = login.getToken()) {
         const options = {
             method: 'POST',
             headers: {
@@ -34,7 +35,7 @@ class Http {
         catch (error) {  return { success: false, error: Error(err('POST', error)) } }
         finally { }
     }
-    async PUT(url: string, body?: object, token = getToken()) {
+    async PUT(url: string, body?: object, token = login.getToken()) {
         const options = {
             method: 'PUT',
             headers: {
@@ -50,7 +51,7 @@ class Http {
         catch (error) {  return { success: false, error: Error(err('PUT', error)) } }
         finally { }
     }
-    async DELETE(url: string, body?: object, token = getToken()) {
+    async DELETE(url: string, body?: object, token = login.getToken()) {
         const options = {
             method: 'DELETE',
             headers: {

@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "../components/Home.css";
-import Button from "./Button";
+import { Button, Layout, Menu, Modal } from "antd";
+import Login from "../components/loginForm/Login";
+
+import Button1 from "./Button";
 import { Link } from "react-router-dom";
 
-function Home(props: any) {
+function HomeSection(props: any) {
   const {
     lightBg,
     topLine,
@@ -21,7 +24,14 @@ function Home(props: any) {
     alt,
     imgStart,
   } = props;
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
   return (
     <>
       <div
@@ -50,11 +60,8 @@ function Home(props: any) {
                 >
                   {description}
                 </p>
-                <Link to="/signup">
-                  <Button buttonSize="btn--wide" buttonColor="blue">
-                    {buttonLabel}
-                  </Button>
-                </Link>
+                <h1></h1>
+        
               </div>
             </div>
             <div className="col">
@@ -73,4 +80,4 @@ function Home(props: any) {
   );
 }
 
-export default Home;
+export default HomeSection;

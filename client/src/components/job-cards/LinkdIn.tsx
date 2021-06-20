@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import JobCard from "./JobCard";
-import "..";
 import { getManyJobOffers } from "../../utils/drafts/jobOffer.utils";
 import { Input, Row, Col, Spin } from "antd";
 import LinkdInRouter from "./LinkdInRouter";
