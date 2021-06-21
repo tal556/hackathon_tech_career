@@ -1,26 +1,19 @@
-  
 import React from 'react';
 import './Footer.css';
 import Button from '../Button'
 import { Link } from 'react-router-dom';
-import {
-  FaFacebook,
-  FaInstagram,
-  FaYoutube,
-  FaTwitter,
-  FaLinkedin
-} from 'react-icons/fa';
-import { MdFingerprint } from 'react-icons/md';
+
+
 
 function Footer() {
   return (
     <div className='footer-container'>
       <section className='footer-subscription'>
         <p className='footer-subscription-heading'>
-         Join Our Students And Find Your Next Dream Job!
+        !הצטרף/י למאות הסטודנטים שלנו בשוק ההייטק
         </p>
         <p className='footer-subscription-text'>
-          You can unsubscribe at any time.
+        לפרטים - הכנס/י את המייל שלך ונחזור אלייך
         </p>
         <div className='input-areas'>
           <form>
@@ -30,41 +23,39 @@ function Footer() {
               type='email'
               placeholder='Your Email'
             />
-            <Button buttonStyle='btn--outline'>Subscribe</Button>
+         <Button buttonStyle='btn--outline'>שלח</Button>
           </form>
         </div>
       </section>
       <div className='footer-links'>
-        <div className='footer-link-wrapper'>
           <div className='footer-link-items'>
-            <h2>About Us</h2>
-            <Link to='/sign-up'>who are we?</Link>
-            <Link to='/'>Courses</Link>
-            <Link to='/'>Careers</Link>
-            <Link to='/'>Terms of Service</Link>
+          <h2>על טק קריירה</h2>
+            <Link to='/sign-up'>קצת עלינו</Link>
+            <Link to='/'>קורסים</Link>
+            <Link to='/'>שיתופי פעולה</Link>
+            <Link to='/'>תנאי שימוש</Link>
           </div>
           <div className='footer-link-items'>
-            <h2>Contact Us</h2>
-            <Link to='/'>Contact</Link>
-            <Link to='/'>Support</Link>
-            <Link to='/'>Destinations</Link>
-            <Link to='/'>Sponsorships</Link>
+          <h2>צור קשר</h2>
+            <Link to='/'>טלפון קווי</Link>
+            <Link to='/'>סלולארי</Link>
+            <Link to='/'>פקס</Link>
+            <Link to='/'>תמיכה טכנית</Link>
           </div>
-        </div>
+       
         <div className='footer-link-wrapper'>
           <div className='footer-link-items'>
-            <h2>Videos</h2>
-            <Link to='/'>Submit Video</Link>
-            <Link to='/'>Ambassadors</Link>
-            <Link to='/'>Agency</Link>
-            <Link to='/'>Influencer</Link>
+          <h2>בוגרי טק </h2>
+            <Link to='/'>וידאו</Link>
+            <Link to='/'>תמונות</Link>
+            <Link to='/'>סיפורים</Link>
           </div>
           <div className='footer-link-items'>
             <h2>Social Media</h2>
             <Link to='/'>Instagram</Link>
             <Link to='/'>Facebook</Link>
-            <Link to='/'>Youtube</Link>
-            <Link to='/'>Twitter</Link>
+            <Link to='/'>YouTube</Link>
+            <Link to=''>Linkedin</Link>
           </div>
         </div>
       </div>
@@ -84,7 +75,7 @@ function Footer() {
               target='_blank'
               aria-label='Facebook'
             >
-              <FaFacebook />
+ 
             </Link>
            
            
@@ -95,7 +86,7 @@ function Footer() {
               target='_blank'
               aria-label='LinkedIn'
             >
-              <FaLinkedin />
+          
             </Link>
           </div>
         </div>

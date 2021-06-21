@@ -16,13 +16,10 @@ function HomeSection(props: any) {
     description,
     buttonLabel,
     img,
-    img1,
-    img2,
-    img3,
-    img4,
-    img5,
     alt,
     imgStart,
+    className,
+    id
   } = props;
   const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -35,7 +32,7 @@ function HomeSection(props: any) {
   return (
     <>
       <div
-        className={lightBg ? "home__home-section" : "home__home-section darkBg"}
+        className={lightBg ? "home_home-section lightBg" : "home_home-section darkBg"}
       >
         <div className="container">
           <div
@@ -60,18 +57,27 @@ function HomeSection(props: any) {
                 >
                   {description}
                 </p>
-                <h1></h1>
-        
+                <Link to="/">
+                  <Button1 buttonSize="btn--wide" buttonColor="blue">
+                    {buttonLabel}
+                  </Button1>
+                </Link>
               </div>
             </div>
             <div className="col">
-              <div className="home__home-img-wrapper">
+              <div className="home__home-img-wrapper" id={id}>
                 <img src={img} alt={alt} className="home__home-img"></img>
-                {/* <img src={img1} alt={alt} className="home__home-img"></img> 
-       <img src={img2} alt={alt} className="home__home-img"></img> 
-       <img src={img3} alt={alt} className="home__home-img"></img> 
-       <img src={img4} alt={alt} className="home__home-img"></img>  */}
               </div>
+              <div className={className}>
+                  <div className="rotateBox">
+                    <img className="imgcv" src="wix.png"></img>
+                    <img className="imgcv" src="oracle.png"></img>
+                    <img className="imgcv" src="redhat.jpg"></img>
+                    <img className="imgcv" src="binat.png"></img>
+                    <img className="imgcv" src="iron.png"></img>
+
+                  </div>
+                </div>
             </div>
           </div>
         </div>

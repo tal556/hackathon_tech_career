@@ -40,7 +40,7 @@ window.addEventListener("resize",showButton);
       <div className="navbar">
         <div className="navbar-container container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            
+          <img className="logosmall" src="/connectech-color-smaller.png" />
             ConnecTech
           </Link>
           <div className="menu-icon" onClick={handleClick}>
