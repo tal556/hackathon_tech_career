@@ -75,7 +75,7 @@ window.addEventListener("resize",showButton);
             <li className="nav-btn">
            
               {isButton ? (<div>
-                <Link to="/signup" className="btn-link" onClick={showModal}>
+                <Link to="/" className="btn-link" onClick={showModal}>
                   <Button buttonStyle='btn--outline'>התחבר</Button>
                 </Link>
                 <Modal

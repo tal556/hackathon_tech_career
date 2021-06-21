@@ -33,9 +33,7 @@ const validateJobOfferRegistration = (data) => {
     if (Validator.isEmpty(data.workRequirements)) {
         errors.workRequirements = "workRequirements field is required"
     }
-    if (Validator.isEmpty(data.minYearsOfExperience)) {
-        errors.minYearsOfExperience = "minYearsOfExperience field is required"
-    }
+   
     if (Validator.isEmpty(data.notes)) {
         errors.notes = "notes field is required"
     }
