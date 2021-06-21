@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Card, Button, Input, Switch, Form } from 'antd';
 import JobCardsHeader from './JobCardsHeader';
 import { Link } from "react-router-dom"
-import { getManyJobOffers } from '../../utils/drafts/jobOffer.utils'
 import './JobEditPage.css';
-import Login from '../../utils/login.utils'
+import {updateJobOfferById} from '../../utils/drafts/jobOffer.utils'
 import { useLocation } from 'react-router-dom'
 
 export default function JobEditPage() {
@@ -15,44 +14,40 @@ export default function JobEditPage() {
     const [jobData, setJobData] = useState(
         {
             uploadedBy: "",
-            jobTitle:"",
-            position:"",
+            jobTitle: "",
+            position: "",
             emailHr: "",
             company: "",
             location: "",
             jobDescription: "",
             workRequirements: "",
-            notes:"",
-            isOpen:true,
+            notes: "",
+            isOpen: true,
+            isHidden: true,
         }
     )
-    
+
     const location: any = useLocation();
     const JobObject: any = location.state?.jobData;
     console.log(JobObject);
 
 
-    function statusToggel(checked:boolean) {
+    function statusToggel(checked: boolean) {
         console.log(`switch to ${checked}`);
-            setJobData({ ...jobData, isOpen: checked})
-        
-      }
+        setJobData({ ...jobData, isOpen: checked })
 
-    function jobDescriptionText (e:any){
-        setJobData({ ...jobData, jobDescription: e.target.value })
-        console.log('Change:', e.target.value);
-      };
+    }
 
-  
-    
     function changeCardType() {
         if (cardType === false) { setCardType(true) }
         else { setCardType(false) }
     };
-
-   
+function updateJobOffer(){
+    updateJobOfferById(jobData, JobObject._id )
+}
+  // updateJobOfferById({ isHidden: true }, "60b7bc72095e2d0900d81eb1", token).then(data => console.log(data))
     return (
-        (!cardType ) ?
+        (!cardType) ?
             <div>
 
                 <JobCardsHeader />
@@ -90,46 +85,45 @@ export default function JobEditPage() {
 
 
 
-                    <Card id="editCard" title={"New job"} bordered={false}>
+                    <Card id="editCard" title={JobObject.position} bordered={false}>
                         <Form>
                             <div className="JobDetails">
 
                                 <div className="allInputClass">
-                                    <Input placeholder="Name" onChange={e => setJobData({ ...jobData, uploadedBy: e.target.value })}/>
-                                </div>
-                                
-                                <div className="allInputClass">
-                                    <Input placeholder="Email" onChange={e => setJobData({ ...jobData, emailHr: e.target.value })}/>
-                                </div>
-                                <div className="allInputClass">
-                                    <Input placeholder="Company Name" onChange={e => setJobData({ ...jobData, company: e.target.value })}/>
-                                </div>
-                                <div className="allInputClass">
-                                    <Input placeholder="Position" onChange={e => setJobData({ ...jobData, position: e.target.value })}/>
-                                </div>
-                                <div className="allInputClass">
-                                    <Input placeholder="Work Requirements" onChange={e => setJobData({ ...jobData, workRequirements: e.target.value })}/>
-                                </div>
-                                <div className="allInputClass">
-                                    <Input placeholder="location" onChange={e => setJobData({ ...jobData, location: e.target.value })}/>
-                                </div>
-                                <div className="allInputClass">
-                                    <Input placeholder="Notes" onChange={e => setJobData({ ...jobData, notes: e.target.value })}/>
+                                    <Input placeholder="Name" onChange={e => setJobData({ ...jobData, uploadedBy: e.target.value })} defaultValue={JobObject.position} />
                                 </div>
 
                                 <div className="allInputClass">
+                                    <Input placeholder="Email" onChange={e => setJobData({ ...jobData, emailHr: e.target.value })} defaultValue={JobObject.emailHr} />
+                                </div>
+                                <div className="allInputClass">
+                                    <Input placeholder={JobObject.company} onChange={e => setJobData({ ...jobData, company: e.target.value })} defaultValue={JobObject.company} />
+                                </div>
+                                <div className="allInputClass">
+                                    <Input placeholder="Position" onChange={e => setJobData({ ...jobData, position: e.target.value })} defaultValue={JobObject.position} />
+                                </div>
+                                <div className="allInputClass">
+                                    <Input placeholder="Work Requirements" onChange={e => setJobData({ ...jobData, workRequirements: e.target.value })} defaultValue={JobObject.workRequirements} />
+                                </div>
+                                <div className="allInputClass">
+                                    <Input placeholder="location" onChange={e => setJobData({ ...jobData, location: e.target.value })} defaultValue={JobObject.location} />
+                                </div>
+                                <div className="allInputClass">
+                                    <Input placeholder="Notes" onChange={e => setJobData({ ...jobData, notes: e.target.value })} defaultValue={JobObject.notes} />
+                                </div>
+                                <div className="allInputClass">
                                     <h5>סטטוס:</h5>
                                     <Switch defaultChecked onChange={statusToggel}
-                                    checkedChildren="פתוח" unCheckedChildren="סגור" 
+                                        checkedChildren="פתוח" unCheckedChildren="סגור"
                                     />
                                 </div>
 
                                 <div className="jobDetails">
-                                    <TextArea showCount maxLength={100} onChange={jobDescriptionText}  placeholder="Job description"/>
+                                    <TextArea showCount maxLength={100} onChange={e => setJobData({ ...jobData,jobDescription : e.target.value })} placeholder="Job description" />
                                 </div>
-                               
+
                                 <div className="btns">
-                                    <Button type="primary" onClick={changeCardType}>שמור</Button>
+                                    <Button type="primary" onClick={updateJobOffer}>שמור</Button>
                                     <Link to="hr/JobCards"><Button type="primary"> הקודם</Button></Link>
                                 </div>
                             </div>

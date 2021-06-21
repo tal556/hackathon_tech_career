@@ -1,10 +1,10 @@
-import login from './login.utils'
-console.log(login)
+import Login from './login.utils'
+console.log(Login)
 // const { getToken } = login
 const err = (serviceName: string, error: string) => `error on ${serviceName}: ${error}`;
 
 class Http {
-    async GET(url: string, token = login.getToken()) {
+    async GET(url: string, token = Login.getToken()) {
         const options = {
             method: 'GET',
             headers: {
@@ -19,7 +19,7 @@ class Http {
         catch (error) { return { success: false, error: Error(err('GET', error)) } }
         finally { }
     }
-    async POST(url: string, body?: object, token = login.getToken()) {
+    async POST(url: string, body?: object, token = Login.getToken()) {
         const options = {
             method: 'POST',
             headers: {
@@ -35,7 +35,7 @@ class Http {
         catch (error) {  return { success: false, error: Error(err('POST', error)) } }
         finally { }
     }
-    async PUT(url: string, body?: object, token = login.getToken()) {
+    async PUT(url: string, body?: object, token = Login.getToken()) {
         const options = {
             method: 'PUT',
             headers: {
@@ -51,7 +51,7 @@ class Http {
         catch (error) {  return { success: false, error: Error(err('PUT', error)) } }
         finally { }
     }
-    async DELETE(url: string, body?: object, token = login.getToken()) {
+    async DELETE(url: string, body?: object, token = Login.getToken()) {
         const options = {
             method: 'DELETE',
             headers: {
