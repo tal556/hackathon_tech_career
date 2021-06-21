@@ -2,8 +2,13 @@ import React, { useState,useEffect } from "react";
 import "./NavBar.css";
 import { Route, BrowserRouter as Router, Switch, Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
+<<<<<<< HEAD
 
 import Button from "../Button"
+=======
+import { MdFingerprint } from "react-icons/md";
+import Button from "../Button/Button"
+>>>>>>> 1c2d06865524f47be5710da78f01e39f473b579e
 import { Layout, Menu, Modal } from "antd";
 import Login from "../loginForm/Login";
 
@@ -41,7 +46,10 @@ window.addEventListener("resize",showButton);
         <div className="navbar-container container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
           <img className="logosmall" src="/connectech-color-smaller.png" />
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1c2d06865524f47be5710da78f01e39f473b579e
             ConnecTech
           </Link>
           <div className="menu-icon" onClick={handleClick}>
@@ -49,9 +57,7 @@ window.addEventListener("resize",showButton);
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <Link to="/" className="nav-links">
-                עמוד הבית
-              </Link>
+              
             </li>
             <li className="nav-item">
               <Link to="/student" className="nav-links" onClick={closeMobileMenu}>
@@ -75,9 +81,14 @@ window.addEventListener("resize",showButton);
             </li>
             <li className="nav-btn">
            
+<<<<<<< HEAD
               {isButton ? (
               <div>
                 <Link to="/signup" className="btn-link" onClick={showModal}>
+=======
+              {isButton ? (<div>
+                <Link to="/" className="btn-link" onClick={showModal}>
+>>>>>>> 1c2d06865524f47be5710da78f01e39f473b579e
                   <Button buttonStyle='btn--outline'>התחבר</Button>
                 </Link>
                 <Modal

@@ -35,7 +35,7 @@ function AdminRouter() {
       <Route path="/hr">
         <JobCards />
       </Route>
-      <Route path="/JobEditPage">
+      <Route path="/CompanyJob">
         <JobEditPage />
       </Route>
       <Route path="/addNewJob">

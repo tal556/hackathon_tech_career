@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "../components/Home.css";
+import "./Home.css";
 import { Button, Layout, Menu, Modal } from "antd";
-import Login from "../components/loginForm/Login";
+import Login from "../loginForm/Login";
 
-import Button1 from "./Button";
+import Button1 from "../Button/Button";
 import { Link } from "react-router-dom";
 
 function HomeSection(props: any) {
@@ -33,7 +33,7 @@ function HomeSection(props: any) {
   return (
     <>
       <div
-        className={lightBg ? "home__home-section lightBg" : "home__home-section darkBg"}
+        className={lightBg ? "home_home-section lightBg" : "home_home-section darkBg"}
       >
         <div className="container">
           <div
