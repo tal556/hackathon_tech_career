@@ -35,8 +35,14 @@
     font-size: 2rem;
     display: flex;
     align-items: center;
+    justify-content:center;
+
+   
   }
   
+  .logosmall{
+    height: 100%;
+  }
   .navbar-icon {
     margin-right: 0.5rem;
   }
@@ -69,8 +75,7 @@
   }
   
   .fa-bars {
-    color: #fff;
-  }
+    color: rgb(0, 0, 0);  }
   
   .menu-icon {
     display: none;
@@ -104,12 +109,15 @@
     .nav-links {
       text-align: center;
       padding: 2rem;
-      width: 100%;
+      width:100%;
       display: table;
+      color: #fff;
+   
+      
     }
   
     .nav-links:hover {
-      color: #f00946;
+      color: rgb(0, 47, 255);
       transform: scale(1.2);
       transition: all 0.3s ease;
     }
@@ -126,9 +134,12 @@
       position: absolute;
       top: 0;
       left: 0;
+      bottom:40px;
       transform: translate(25%, 50%);
+    
     }
-  
+
+
     .menu-icon {
       display: block;
       position: absolute;

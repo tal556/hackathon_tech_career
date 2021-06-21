@@ -14,7 +14,7 @@ export default function LinkdIn() {
   useEffect(() => {
     const fetchData = async () => {
       let fetchedData = await getManyJobOffers({ isHidden: false });
-      const jobOffers = fetchedData.data
+      const jobOffers = fetchedData.data || ""
       setFetchedDataDb(jobOffers);  
       setUserInfo(jobOffers[0])
     };

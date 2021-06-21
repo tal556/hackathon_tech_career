@@ -2,7 +2,7 @@ import React, { useState,useEffect } from "react";
 import "./NavBar.css";
 import { Route, BrowserRouter as Router, Switch, Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { MdFingerprint } from "react-icons/md";
+
 import Button from "../Button"
 import { Layout, Menu, Modal } from "antd";
 import Login from "../loginForm/Login";
@@ -36,15 +36,16 @@ useEffect(()=>{
 window.addEventListener("resize",showButton);
   return (
     <>
-    <IconContext.Provider value={{color:'#fff'}}>
+    <IconContext.Provider value={{color:'#000'}}>
       <div className="navbar">
         <div className="navbar-container container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            
+          <img className="logosmall" src="/connectech-color-smaller.png" />
+
             ConnecTech
           </Link>
           <div className="menu-icon" onClick={handleClick}>
-            {click ? <FaTimes /> : <FaBars />}
+          {click ? <FaTimes /> : <FaBars  style={{color:"#000"}}   />}
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
@@ -74,7 +75,8 @@ window.addEventListener("resize",showButton);
             </li>
             <li className="nav-btn">
            
-              {isButton ? (<div>
+              {isButton ? (
+              <div>
                 <Link to="/signup" className="btn-link" onClick={showModal}>
                   <Button buttonStyle='btn--outline'>התחבר</Button>
                 </Link>

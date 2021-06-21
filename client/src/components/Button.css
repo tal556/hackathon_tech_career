@@ -23,11 +23,13 @@
     padding: 8px 20px;
     border: 1px solid var(--primary);
 transition: all 0.3s ease-out;
+
 }
 
 .btn-medium{
     padding: 8px 20px;
     font-size: 18px;
+    
 }
 
 .btn--large{
@@ -48,7 +50,6 @@ font-size: 20px;
 }
 
 .btn--wide{
-    padding: 12px 64px;
     font-size: 20px;
 }
 
@@ -87,6 +88,7 @@ font-size: 20px;
     background-color: #fff;
     color:#242424;
     border:none;
+    
 }
 
 .green{
@@ -109,4 +111,5 @@ text-decoration: none;
 padding:8px 16px;
 height:100%;
 width:100%;
+
 }
