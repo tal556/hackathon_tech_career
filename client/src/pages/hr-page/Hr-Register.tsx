@@ -3,7 +3,7 @@ import { getHrById, updateHrById } from '../../utils/drafts/hr.utils'
 import "antd/dist/antd.css";
 import { Form, Input, Button, Spin, Image, message } from "antd";
 import { useHistory, useParams } from 'react-router-dom';
-// import FileBase from 'react-file-base64'
+import FileBase from 'react-file-base64'
 
 export default function HrRegisterForm() {
   const layout = { labelCol: { span: 8 }, wrapperCol: { span: 16 } }
@@ -121,7 +121,7 @@ export default function HrRegisterForm() {
                 <Input id="company" disabled={true} />
               </Form.Item>
               <Form.Item label="תמונת פרופיל" name="profilePic">
-                {/* <FileBase type="file" multiple={false} onDone={({ base64 }: any) => { setHrData({ ...hrData, profilePicture: base64 }) }} /> */}
+                <FileBase type="file" multiple={false} onDone={({ base64 }: any) => { setHrData({ ...hrData, profilePicture: base64 }) }} />
               </Form.Item>
               <Button id="submitBtn" type="primary" htmlType="submit">
                 Submit
