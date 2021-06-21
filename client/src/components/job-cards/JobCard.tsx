@@ -8,7 +8,7 @@ const { Meta } = Card;
 
 export default function JobCard({ userItem, setUser }: any): any {
   const { position, company, location, _id, numOfPeopleApplied } = userItem;
-  
+
 
   return (
     <Container

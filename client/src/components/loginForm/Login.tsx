@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { Form, Input, Button, Select } from 'antd';
+import { Form, Input, Button, Select,message } from 'antd';
 import { connect } from 'react-redux';
 import usersActions from '../../redux/actions/user.actions';
 import LogIn from '../../utils/login.utils';
@@ -10,7 +10,13 @@ const { setUserData } = usersActions.usersActions;
 
 const mapDispatchToProps = (dispatch: any) => ({setUserData: (data: Object) => { dispatch(setUserData(data)) }})
 const mapStateToProps = (state: any) => { return { userData: state.user.userData } }
-
+const loginSuccess = () => {
+    message.success('This is a success message');
+  };
+  
+  const loginError = () => {
+    message.error('This is an error message');
+  };
 const Login = (): any => {
     const [role, setRole] = useState('student')
     const layout = { labelCol: { span: 8 }, wrapperCol: { span: 16 } }
@@ -24,12 +30,14 @@ const Login = (): any => {
         console.log(email);
         console.log(password);
         
+        
         if (resFromLogin.success) {
+            loginSuccess()
             const token = resFromLogin.token
             setTokenLocal(token)
             setUserData(token)
             window.location.reload();
-
+            
         } else { alert('נסה שוב') }
 
     }
