@@ -8,6 +8,7 @@ const { Option } = Select;
 const { loginUser, setTokenLocal } = LogIn
 const { setUserData } = usersActions.usersActions;
 
+
 const mapDispatchToProps = (dispatch: any) => ({setUserData: (data: Object) => { dispatch(setUserData(data)) }})
 const mapStateToProps = (state: any) => { return { userData: state.user.userData } }
 const loginSuccess = () => {

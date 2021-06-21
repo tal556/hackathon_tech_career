@@ -29,6 +29,8 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -40,4 +42,23 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBu4QAmuyY-jrGIk77Ku6K7yENCzfuwLiw",
+    authDomain: "hackaton-ibex.firebaseapp.com",
+    projectId: "hackaton-ibex",
+    storageBucket: "hackaton-ibex.appspot.com",
+    messagingSenderId: "772788188126",
+    appId: "1:772788188126:web:3318670e6796c154abe34f"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
 </html>

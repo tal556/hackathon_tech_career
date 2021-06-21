@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import Button from '../Button'
+import Button from '../Button/Button'
 import { Link } from 'react-router-dom';
 
 
@@ -52,10 +52,10 @@ function Footer() {
           </div>
           <div className='footer-link-items'>
             <h2>Social Media</h2>
-            <Link to='/'>Instagram</Link>
-            <Link to='/'>Facebook</Link>
-            <Link to='/'>YouTube</Link>
-            <Link to=''>Linkedin</Link>
+            <a href="https://www.instagram.com/techcareer">Instagram </a>
+            <a href="https://www.facebook.com/tech.career">Facebook </a>
+            <a href="https://www.youtube.com/channel/UCVNITxGQ4M_Ze5hxv36B40Q">YouTube </a>
+            <a href="https://www.linkedin.com/school/techcareerisrael/">Linkedin </a>
           </div>
         </div>
       </div>

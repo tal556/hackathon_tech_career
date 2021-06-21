@@ -163,6 +163,10 @@
 
   .btn {
     width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    direction: rtl;
   }
 
   .footer-link-wrapper {

@@ -97,7 +97,9 @@ const StuFirstStep = (props: any) => {
           ]}
         >
           <Input.Password />
+
         </Form.Item>
+        
         <Button id="submitBtn" type="primary" htmlType="submit">Submit</Button>
       </Form>
     </div>

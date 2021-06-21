@@ -3,7 +3,7 @@ import "./NavBar.css";
 import { Route, BrowserRouter as Router, Switch, Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { MdFingerprint } from "react-icons/md";
-import Button from "../Button"
+import Button from "../Button/Button"
 import { Layout, Menu, Modal } from "antd";
 import Login from "../loginForm/Login";
 
@@ -44,13 +44,11 @@ window.addEventListener("resize",showButton);
             ConnecTech
           </Link>
           <div className="menu-icon" onClick={handleClick}>
-            {click ? <FaTimes /> : <FaBars />}
+          {click ? <FaTimes /> : <FaBars  style={{color:"#000"}}   />}
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <Link to="/" className="nav-links">
-                עמוד הבית
-              </Link>
+              
             </li>
             <li className="nav-item">
               <Link to="/student" className="nav-links" onClick={closeMobileMenu}>
@@ -89,10 +87,7 @@ window.addEventListener("resize",showButton);
                 </div>
               ): (
                 <Link to="/signup" className="btn-link" onClick={closeMobileMenu}>
-                  <Button buttonStyle='btn--outline'
-                  buttonSize='btn--mobile'
-                  >התחבר
-                  </Button>
+                  <Button buttonStyle='btn--outline' buttonSize='btn--mobile'>התחבר</Button>
                 </Link>
               )}
             </li>

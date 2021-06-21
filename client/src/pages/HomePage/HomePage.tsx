@@ -1,5 +1,5 @@
 import React from 'react'
-import HomeSection from '../../components/Home'
+import HomeSection from '../../components/Home/Home'
 import {homeObjOne,homeObjTwo,homeObjThree,homeObjFour} from './Data'
 function HomePage() {
     return (
