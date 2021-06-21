@@ -2,9 +2,11 @@
 
 .home__home-section{color: #fff;height: 100vh;display: flex;justify-content: center;align-items: center;  }
 
-.home__home-row{align-items: center;}
+.home__home-row{align-items: center;
+    height: 100vh
+}
 
-.row{display: flex;margin-right: -15px;margin-bottom: -15px;margin-left: -15px;flex-wrap: wrap;align-content: stretch;}
+.row{display: flex;margin-right: -15px; color:white ; margin-bottom: -15px;margin-left: -15px;flex-wrap: wrap;align-content: stretch;}
 
 .col{margin-bottom: 15px;padding-right: 15px;padding-left: 15px;flex: 1;max-width: 50%;flex-basis: 50%;direction: rtl;}
 
