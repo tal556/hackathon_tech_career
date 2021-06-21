@@ -91,10 +91,7 @@ window.addEventListener("resize",showButton);
                 </div>
               ): (
                 <Link to="/signup" className="btn-link" onClick={closeMobileMenu}>
-                  <Button buttonStyle='btn--outline'
-                  buttonSize='btn--mobile'
-                  >התחבר
-                  </Button>
+                  <Button buttonStyle='btn--outline' buttonSize='btn--mobile'>התחבר</Button>
                 </Link>
               )}
             </li>

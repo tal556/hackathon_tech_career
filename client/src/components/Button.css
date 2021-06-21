@@ -1,5 +1,5 @@
 :root{
-    --primary:#fff
+    --primary:#fff;
 }
 
 .btn{
@@ -26,10 +26,11 @@ transition: all 0.3s ease-out;
 
 }
 
+
+
 .btn-medium{
     padding: 8px 20px;
     font-size: 18px;
-    
 }
 
 .btn--large{
@@ -47,7 +48,9 @@ font-size: 20px;
     padding: 14px 20px;
     border:1px solid #fff;
     transition: all 0.3s ease-out;
+    
 }
+
 
 .btn--wide{
     font-size: 20px;
@@ -55,22 +58,23 @@ font-size: 20px;
 
 .btn--large:hover , .btn--medium:hover,.btn--mobile:hover{
     transition: all 0.3s ease-out;
-    background: #fff;
+    background: rgb(14, 46, 231);
     color:#242424 ;
 }
 
 
 .btn--wide:hover{
     color: #fff;
-    background-color: #09f04e;
+    background-color: rgb(14, 46, 231);
     transition: all 0.2s ease-out;
 }
 
 .blue{
-    background-color: #276afb;
-    color:#fff;
-    border:none;
+    background-color: #fff;
+    color:rgb(0, 0, 0);
+    border:1px solid #000;
 }
+
 
 .red{
     background-color: #f00946;
@@ -86,7 +90,7 @@ font-size: 20px;
 
 .primary:hover{
     background-color: #fff;
-    color:#242424;
+    color:#ffffff;
     border:none;
     
 }
@@ -111,5 +115,6 @@ text-decoration: none;
 padding:8px 16px;
 height:100%;
 width:100%;
+
 
 }
