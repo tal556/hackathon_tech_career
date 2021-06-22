@@ -3,6 +3,10 @@ import { Form, Input, Button, Select,message } from 'antd';
 import { connect } from 'react-redux';
 import usersActions from '../../redux/actions/user.actions';
 import LogIn from '../../utils/login.utils';
+import firebase from "firebase/app";
+import "firebase/auth";
+import init from '../../Firebase'
+
 const { Option } = Select;
 
 const { loginUser, setTokenLocal } = LogIn
@@ -23,22 +27,39 @@ const Login = (): any => {
     const tailLayout = { wrapperCol: { offset: 8, span: 16 } }
 
     const onFinish = async (values: any) => {
+        init()
         const email: any = values.email
         const password: any = values.password
-        const resFromLogin = await loginUser({ email, password }, role)
-        console.log(resFromLogin);
+
         console.log(email);
         console.log(password);
-        
-        
-        if (resFromLogin.success) {
-            loginSuccess()
-            const token = resFromLogin.token
+
+        firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password)
+        .then((userCredentials) => {
+          // Sign in worked
+          loginSuccess()
+         const token = userCredentials.user?.uid
+         if(token){
             setTokenLocal(token)
             setUserData(token)
-            window.location.reload();
-            
-        } else { alert('נסה שוב') }
+         }
+     
+          window.location.reload();
+        })
+        .catch((error) => {
+          // error.code, error.message
+          console.log(error);
+        //   alert('נסה שוב')
+          
+        });
+              // Sign in worked
+       
+
+      //  const resFromLogin = await loginUser({ email, password }, role)
+      //  console.log(resFromLogin);
+     
 
     }
     const onFinishFailed = (errorInfo: any) => { console.log('Failed:', errorInfo) }

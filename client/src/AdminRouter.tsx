@@ -14,13 +14,14 @@ import StuSteps from './components/steps/StuSteps'
 import StudentPersonal from './pages/personal-page/StudentPersonal'
 import JobEditPage from './pages/CompanyZone/JobEditPage'
 
-
-
+import SignIn from './components/chatApp/SignIn'
+ 
 import {
   Switch,
   Route
 } from "react-router-dom";
 import AddJob from './pages/CompanyZone/AddJob';
+import ChatRoom from './components/chatApp/ChatRoom';
 
 
 function AdminRouter() {
@@ -67,6 +68,12 @@ function AdminRouter() {
       <Route path="/privatestudent">
         <StudentPersonal />
       </Route>
+      <Route path="/chat">
+        <ChatRoom />
+      </Route>
+        <Route path="/signin">
+          <SignIn />
+        </Route>
     </Switch>
   )
 

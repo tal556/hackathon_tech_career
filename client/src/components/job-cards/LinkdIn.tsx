@@ -4,6 +4,12 @@ import JobCard from "./JobCard";
 import { getManyJobOffers } from "../../utils/drafts/jobOffer.utils";
 import { Input, Row, Col, Spin } from "antd";
 import LinkdInRouter from "./LinkdInRouter";
+import 'firebase/firestore';
+import 'firebase/database';
+import firebase from 'firebase/app';
+import init from '../../Firebase'
+init();
+
 
 export default function LinkdIn() {
   const { Search } = Input;
@@ -12,10 +18,20 @@ export default function LinkdIn() {
 
   useEffect(() => {
     const fetchData = async () => {
-      let fetchedData = await getManyJobOffers({ isHidden: false });
-      const jobOffers = fetchedData.data || "";
-      setFetchedDataDb(jobOffers);
-      setUserInfo(jobOffers[0]);
+
+      
+      var userDataRef = firebase.database().ref('jobs/jobOffers' );
+      userDataRef.on('value', (snapshot) => {
+        const jobOffers = snapshot.val();
+        setFetchedDataDb(jobOffers)
+        setUserInfo(jobOffers[0]);
+  });
+
+
+     // let fetchedData = await getManyJobOffers({ isHidden: false });
+      //const jobOffers = fetchedData.data || "";
+      //setFetchedDataDb(jobOffers);
+     
     };
     fetchData();
   }, []);

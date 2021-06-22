@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+
+import React, { useEffect, useRef, useState } from 'react';
 import NavBar from "./components/navBar/NavBar";
 import "./App.css";
 import Footer from "./components/footer/Footer";
@@ -9,6 +10,7 @@ import service from './utils';
 
 
 
+
 const { setUserData } = usersActions.usersActions;
 const mapDispatchToProps = (dispatch: any) => ({
   setUserData: (data: Object) => { dispatch(setUserData(data)) }
@@ -16,7 +18,10 @@ const mapDispatchToProps = (dispatch: any) => ({
 const mapStateToProps = (state: any) => { return { userData: state.user.userData } }
 
 
+
 function App(props: any) {
+
+
   const { setUserData, userData } = props
   const { login } = service
   const { getUserUseToken } = login
@@ -59,13 +64,3 @@ function App(props: any) {
 export default connect(mapStateToProps, mapDispatchToProps)(App)
 
 
-// function App(props: any) {
-//   return (<>
-//     <NavBar />
-//     <AdminRouter />
-//     <Footer />
-//   </>
-//   );
-// }
-
-// export default App;

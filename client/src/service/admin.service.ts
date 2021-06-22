@@ -1,5 +1,11 @@
 import { API } from "../app.utils";
 import axios from "axios";
+import 'firebase/firestore';
+import 'firebase/database';
+import firebase from 'firebase/app';
+import init from '.././Firebase'
+
+init();
 
 const headers = {
   headers: {
@@ -12,7 +18,13 @@ export async function getAllCourses() {
 }
 
 export async function getAllJobOffers() {
-  return await (await axios.get(`${API}/jobOffers/all`, headers)).data.data;
+  var userDataRef = await firebase.database().ref('jobs/jobOffers' );
+  userDataRef.once('value', (snapshot) => {
+    const jobOffers = snapshot.val();
+    return jobOffers;
+});
+
+  
 }
 
 export async function getGraduatesByCourse(courseId: string){

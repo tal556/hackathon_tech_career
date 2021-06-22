@@ -20,6 +20,11 @@ import { DeleteOutlined } from "@ant-design/icons";
 
 import { tableColumnTextFilterConfig } from "./table-utils/tableUtils";
 import "./style.css";
+import 'firebase/firestore';
+import 'firebase/database';
+import firebase from 'firebase/app';
+import init from '../../Firebase'
+init();
 
 function AdminPage() {
   //courses columns
@@ -332,12 +337,25 @@ function AdminPage() {
 
   useEffect(() => {
     const getUserData = async () => {
-      const user = await getUserUseToken(localStorage.getItem("token") || "{}");
+      const auth = firebase.auth();
+if(auth?.currentUser){
+ 
+  const uid = auth.currentUser.uid;
+
+  var userDataRef = firebase.database().ref('users/' + uid);
+  var user = await userDataRef.once('value', (snapshot) => {
+     return snapshot.val();
+  });
+
+//  return user;
+}
+
+     /* const user = await getUserUseToken(localStorage.getItem("token") || "{}");
       const userRole = (user.data || { role: undefined }).role;
       setRole(userRole);
       if (!role) {
         history.push("/");
-      }
+      }*/
     };
     getUserData();
   }, [role]);
