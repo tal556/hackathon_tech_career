@@ -12,6 +12,7 @@ function HomeSection(props: any) {
     topLine,
     lightText,
     lightTextDesc,
+    
     headline,
     description,
     buttonLabel,

@@ -44,7 +44,7 @@ window.addEventListener("resize",showButton);
             ConnecTech
           </Link>
           <div className="menu-icon" onClick={handleClick}>
-            {click ? <FaTimes /> : <FaBars />}
+          {click ? <FaTimes /> : <FaBars  style={{color:"#000"}}   />}
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
@@ -87,10 +87,7 @@ window.addEventListener("resize",showButton);
                 </div>
               ): (
                 <Link to="/signup" className="btn-link" onClick={closeMobileMenu}>
-                  <Button buttonStyle='btn--outline'
-                  buttonSize='btn--mobile'
-                  >התחבר
-                  </Button>
+                  <Button buttonStyle='btn--outline' buttonSize='btn--mobile'>התחבר</Button>
                 </Link>
               )}
             </li>
