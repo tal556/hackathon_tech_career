@@ -69,6 +69,12 @@ window.addEventListener("resize",showButton);
               <Link to="/admin" className="nav-links" onClick={closeMobileMenu}>
                 הנהלה
               </Link>
+              
+            </li>
+            <li>
+            <Link to="/chat" className="nav-links" onClick={closeMobileMenu}>
+                צ'אט
+              </Link>
             </li>
             <li className="nav-btn">
            

@@ -78,6 +78,7 @@ function ChatRoom() {
       <div className="msgsDiv">
         <h1>Tech-Chat</h1>
         <div className="msgCont">
+          <img  src="/mainbg.png" alt="" />
    {/* we will loop over the message and return a
         ChatMessage component for each message */}
         {posts && posts.map(msg => <ChatMessage key={msg.key} message={msg.body} user={msg.user}/>)}

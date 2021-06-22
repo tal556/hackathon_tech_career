@@ -12,7 +12,7 @@ padding-top: 50px;
 }
 
 .msgCont{
-    width: 80%;
+    width: 50%;
     height: 100vh;
     border: 1px solid #000;
    overflow: hidden;
@@ -21,8 +21,9 @@ padding-top: 50px;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-background-color: aqua;
-box-shadow: 2px 2px 6px 0px;
+z-index: 1;box-shadow: 2px 2px 6px 0px;
+color:rgb(0, 0, 0);
+border-radius: 4%;
 
 }
 
