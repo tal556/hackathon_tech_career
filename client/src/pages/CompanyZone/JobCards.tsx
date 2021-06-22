@@ -9,11 +9,11 @@ import { useHistory } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 
-const mapStateToProps = (state: any) => { return { userData: state.user.userData.data } }
+const mapStateToProps = (state: any) => { return { userData: state.user.userData } }
 
 
 function JobCards(props: any) {
-    
+
     const { userData } = props
 
     const history = useHistory()
@@ -24,12 +24,12 @@ function JobCards(props: any) {
 
 
     const getJobData = async () => {
-try{
-    const jobOfferData = (userData.company) ? await getManyJobOffers({ company: userData.company }) : await getManyJobOffers()
-        setJobOffer(jobOfferData.data)
-    }catch(e){
-console.log('catch'+e);
-    }
+        try {
+            const jobOfferData = (userData.company) ? await getManyJobOffers({ company: userData.company }) : await getManyJobOffers()
+            setJobOffer(jobOfferData.data)
+        } catch (e) {
+            console.log('catch' + e);
+        }
     }
 
     function addNewJob() {

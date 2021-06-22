@@ -5,7 +5,7 @@ const {
 
 
 export default function user(
-    state = { userData: Object },
+    state = { userData: {} },
     action: { type: string, payload: Object }) {
 
     switch (action.type) {

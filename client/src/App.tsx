@@ -7,15 +7,11 @@ import usersActions from './redux/actions/user.actions';
 import { connect } from 'react-redux';
 import service from './utils';
 
-
-
 const { setUserData } = usersActions.usersActions;
 const mapDispatchToProps = (dispatch: any) => ({
   setUserData: (data: Object) => { dispatch(setUserData(data)) }
 })
 const mapStateToProps = (state: any) => { return { userData: state.user.userData } }
-
-
 function App(props: any) {
   const { setUserData, userData } = props
   const { login } = service
@@ -28,15 +24,13 @@ function App(props: any) {
         const userFromToken = await getUserUseToken(token)
         if (userFromToken.success) {
           login.setTokenLocal(token)
-          await setUserData(userFromToken)
+          await setUserData(userFromToken.data)
         }
       }
     }
 
     loginHandler()
   }, [getUserUseToken, login, setUserData]);
-
-
 
   if (!userData.email) {
     return (
@@ -57,15 +51,4 @@ function App(props: any) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
-
-
-// function App(props: any) {
-//   return (<>
-//     <NavBar />
-//     <AdminRouter />
-//     <Footer />
-//   </>
-//   );
-// }
-
-// export default App;
+  
