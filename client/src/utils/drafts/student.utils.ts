@@ -63,7 +63,6 @@ export async function getAllStudents() {
 
 export async function getManyStudents(credentials: any){
     const body = {student:credentials} // example : {"student":{ "courseId": "60ba50a87a6cca40fa1050a5","isGraduated":true}}
-
     try {
         return await (await axios.post(`${API}/students/many`,body,headers)).data.data
     }
